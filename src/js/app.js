@@ -103,7 +103,7 @@ function PaginaSiguiente(){
 
 async function consultarAPI(){
   try {
-    const url = 'http://localhost:3000/api/servicios' //Url que voy a consumir la que tiene mi api
+    const url = `${location.origin}/api/servicios` //Url que voy a consumir la que tiene mi api
     const resultado = await fetch(url) //Funcion que nos permite consumir este servicio: http://localhost:3000/api/servicios
     const servicios = await resultado.json()
     mostrarServicios(servicios)
@@ -312,7 +312,7 @@ async function reservarCita(){
 
   try {
     //Peticion hacia la api
-      const url = 'http://localhost:3000/api/citas'
+      const url = `${location.origin}/api/citas`
 
       const respuesta = await fetch(url,{
         method: 'POST', //Utiliza el archivo js utiliza el metodo POST para enviarlo a la URL de arriba
